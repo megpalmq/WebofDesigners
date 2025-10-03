@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Abetkaua Clone</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="preloader"></div>
+    
+      <div class="wrapper">
+        <video autoplay muted loop playsinline id="bg-video">
+          <source src="../videos/hero.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
+        <header class="main-header">
+          <a href="#home" class="logo">AB</a>
+          <nav>
+            <ul>
+              <li><a href="#about">About</a></li>
+              <li><a href="#study">Study</a></li>
+              <li><a href="#work">Work</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </nav>
+        </header>
+      
+
+      <main>
+        <section id="home" class="full-height-section intro-section">
+          <div class="content-wrapper">
+            <div class="text-mask">
+              <h1 class="split-text-target">Digital Creative.</h1>
+            </div>
+            <p>
+              Based in NYC, focusing on full-stack development and expressive
+              digital identities.
+            </p>
+          </div>
+        </section>
+</div>
+        <section id="about" class="full-height-section about-section">
+          <div class="content-wrapper about-inner">
+    <div class="about-hero">
+      <h2>About this project</h2>
+      <p class="lede">
+        A curated study of designers whose ideas shaped modern design — built for Helen and anyone who wants practical inspiration from history.
+      </p>
+    </div>
+
+    <div class="about-grid">
+      
+        <h3>What this site is</h3>
+        <p>
+          A searchable, digestible collection of designers, their philosophies,
+          and key works. Each profile links ideas to practice so you can see how
+          big concepts translate into real design decisions.
+        </p>
+        <h3>Why it matters</h3>
+        <p>
+          Design is a conversation across time. Knowing where ideas come from
+          gives context to modern trends and teaches you how to borrow, adapt,
+          and innovate responsibly.
+        </p>
+        <h3>Who it's for</h3>
+        <p>
+          Students, designers, educators, and curious minds — anyone wanting a
+          quick, meaningful way to connect historical influence to contemporary
+          practice.
+        </p>
+    </div>
+
+    <div class="about-cta">
+      <p>Start by exploring a designer — or try the design study cards to discover unexpected influences.</p>
+      <a href="#study" class="btn-primary">Browse Studies</a>
+    </div>
+  </div>
+        </section>
+
+        <section id="study" class="design-study-section design-section">
+          <div class="content-wrapper">
+            <h2>Design Study</h2>
+            <p class="study-intro">
+              A look into the influential minds that shape my aesthetic and
+              approach to design systems. Click a card to learn more.
+            </p>
+
+            <div class="designer-grid">
+              <div class="designer-card" data-designer="glaser">
+                <h3>Milton Glaser</h3>
+                <p>Graphic Design, Illustration</p>
+              </div>
+              <div class="designer-card" data-designer="scher">
+                <h3>Paula Scher</h3>
+                <p>Identity, Typography</p>
+              </div>
+              <div class="designer-card" data-designer="rams">
+                <h3>Dieter Rams</h3>
+                <p>Industrial Design, Minimalism</p>
+              </div>
+              <div class="designer-card" data-designer="eames">
+                <h3>Charles & Ray Eames</h3>
+                <p>Architecture, Furniture</p>
+              </div>
+              <div class="designer-card" data-designer="vignelli">
+                <h3>Lella Vignelli</h3>
+                <p>Systemic Design, Branding</p>
+              </div>
+              <div class="designer-card" data-designer="anderson">
+                <h3>Wes Anderson</h3>
+                <p>Cinematic Aesthetic, Color</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="work" class="work-section">
+          <div class="horizontal-scroll-container">
+            <div class="project-wrapper">
+              <div class="project-card">
+                <h2>Work 01</h2>
+                <p>Conceptual Design</p>
+              </div>
+              <div class="project-card">
+                <h2>Work 02</h2>
+                <p>E-commerce Platform</p>
+              </div>
+              <div class="project-card">
+                <h2>Work 03</h2>
+                <p>Interactive Showcase</p>
+              </div>
+              <div class="project-card">
+                <h2>Work 04</h2>
+                <p>Brand Identity</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="glaser" class="designer-detail-section"></section>
+        <section id="contact" class="full-height-section contact-section">
+          <div class="content-wrapper">
+            <p class="contact-text">Ready to collaborate?</p>
+            <h2>Let's talk.</h2>
+          </div>
+        </section>
+      </main>
+
+      <div id="designer-detail-modal" class="modal">
+        <div class="modal-content">
+          <span class="close-btn">&times;</span>
+          <h3 id="detail-name">Designer Name</h3>
+          <p id="detail-significance"></p>
+          <p id="detail-quote" class="quote"></p>
+          <h4>Key Works:</h4>
+          <ul id="detail-designs"></ul>
+          <p id="detail-bio"></p>
+        </div>
+      </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
