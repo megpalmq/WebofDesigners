@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dieter Rams — Web of Designers</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="rams-theme">
+    <header class="main-header minimal-header">
+      <a href="index.html" class="logo">WD</a>
+      <nav>
+        <ul>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#study">Study</a></li>
+          <li><a href="index.html#work">Timeline</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="designer-page">
+      <section class="designer-hero">
+        <div class="hero-grid">
+          <div class="hero-text fade-in">
+            <h1>Dieter Rams</h1>
+            <p class="subtitleRams">
+              Industrial Designer · Minimalist Visionary
+            </p>
+          </div>
+          <div class="hero-image-containerMil slide-up">
+            <img
+              src="../images/dieter.png"
+              alt="Portrait of Dieter Rams"
+              class="hero-image"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="designer-bio content-wrapper fade-in">
+        <h2>About Dieter Rams</h2>
+        <p>
+          Dieter Rams is one of the most influential industrial designers of the
+          20th century, best known for his work at Braun and his “Less, but
+          better” philosophy. His design principles — rooted in clarity,
+          simplicity, and honesty — have profoundly shaped modern product design
+          and continue to inspire generations of designers and brands, including
+          Apple.
+        </p>
+      </section>
+
+      <section class="principles-section fade-in">
+        <h3>Ten Principles of Good Design</h3>
+        <div class="principles-grid">
+          <div class="principle-card">Good design is innovative.</div>
+          <div class="principle-card">Good design makes a product useful.</div>
+          <div class="principle-card">Good design is aesthetic.</div>
+          <div class="principle-card">
+            Good design makes a product understandable.
+          </div>
+          <div class="principle-card">Good design is unobtrusive.</div>
+          <div class="principle-card">Good design is honest.</div>
+          <div class="principle-card">Good design is long-lasting.</div>
+          <div class="principle-card">
+            Good design is thorough down to the last detail.
+          </div>
+          <div class="principle-card">
+            Good design is environmentally friendly.
+          </div>
+          <div class="principle-card">
+            Good design is as little design as possible.
+          </div>
+        </div>
+      </section>
+
+      <section class="designer-gallery content-wrapper fade-in">
+        <h2>Iconic Works</h2>
+        <div class="gallery-grid">
+          <figure>
+            <img src="../images/radio.jpg" alt="Braun SK4 Radio" />
+            <figcaption>Braun SK4 Radio (1956)</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="../images/braun-calculator.jpg"
+              alt="Braun ET66 Calculator"
+            />
+            <figcaption>Braun ET66 Calculator (1987)</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="../images/shelf.jpg"
+              alt="Vitsoe 606 Universal Shelving System"
+            />
+            <figcaption>Vitsoe 606 Universal Shelving System (1960)</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="designer-legacy fade-in">
+        <h2>Legacy</h2>
+        <p>
+          Rams’ disciplined design thinking paved the way for modern digital and
+          physical product aesthetics. His timeless approach to form and
+          function can be seen in today’s minimalist interfaces and devices,
+          proving that good design endures through restraint, purpose, and
+          clarity.
+        </p>
+        <blockquote>
+          “Good design is as little design as possible.”
+          <span>— Dieter Rams</span>
+        </blockquote>
+        <a href="../index.html#study" class="btn-primary">← Back to Study</a>
+      </section>
+    </main>
+
+    <footer class="site-footer minimal-footer">
+      <p>© 2025 Web of Designers · Crafted with clarity.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script>
+      gsap.utils.toArray(".fade-in").forEach((el) => {
+        gsap.from(el, {
+          opacity: 0,
+          y: 40,
+          duration: 1,
+          scrollTrigger: {
+            trigger: el,
+            start: "top 85%",
+          },
+        });
+      });
+
+      gsap.from(".slide-up", {
+        y: 100,
+        opacity: 0,
+        duration: 1.2,
+        ease: "power2.out",
+      });
+    </script>
+  </body>
+</html>

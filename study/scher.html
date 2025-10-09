@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paula Scher — Web of Designers</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700;900&family=Anton&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="scher-theme">
+    <header class="main-header scher-header">
+      <a href="index.html" class="logo">WD</a>
+      <nav>
+        <ul>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#study">Study</a></li>
+          <li><a href="index.html#work">Timeline</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="designer-page">
+      <section class="designer-hero scher-hero">
+        <div class="scher-hero-text">
+          <h1 class="big-type">PAULA<br /><span>SCHER</span></h1>
+          <p class="subtitle">Typographer · Creative Director · Rule Breaker</p>
+        </div>
+        <div class="scher-image-container">
+          <img src="../images/paula.jpg" alt="Portrait of Paula Scher" />
+        </div>
+      </section>
+
+      <section class="designer-bio content-wrapper fade-in">
+        <h2>About Paula Scher</h2>
+        <p>
+          Paula Scher is one of the most influential graphic designers of our
+          time. Known for her expressive use of typography and energetic
+          compositions, Scher’s work bridges the gap between fine art and
+          graphic communication. From album covers in the 1970s to her iconic
+          identity systems for brands like Citibank, the Public Theater, and
+          Microsoft, Scher has redefined what design can say — and how loudly it
+          can say it.
+        </p>
+      </section>
+
+      <section class="poster-style-section fade-in">
+        <h3>Design Approach</h3>
+        <p>
+          Scher’s designs often scream rather than whisper. They use
+          <span class="highlight-text">scale</span>,
+          <span class="highlight-text">color</span>, and
+          <span class="highlight-text">typographic rhythm</span>
+          to make words the heroes of the composition. Her approach is both
+          chaotic and controlled — a visual dance between order and rebellion.
+        </p>
+      </section>
+
+      <section class="designer-gallery scher-gallery fade-in">
+        <h2>Iconic Works</h2>
+        <div class="gallery-grid">
+          <figure>
+            <img
+              src="../images/theatrePoster.jpg"
+              alt="The Public Theater Poster"
+            />
+            <figcaption>The Public Theater Poster (1994)</figcaption>
+          </figure>
+          <figure>
+            <img src="../images/citi.jpg" alt="Citibank Logo" />
+            <figcaption>Citibank Logo Sketch (1998)</figcaption>
+          </figure>
+          <figure>
+            <img src="../images/scherMaps.jpg" alt="Painted Maps" />
+            <figcaption>Hand-Painted Maps Series (2005–present)</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="designer-legacy fade-in">
+        <h2>Legacy</h2>
+        <p>
+          Paula Scher continues to influence generations of designers by proving
+          that typography can be both a visual and emotional experience. Her
+          bold compositions remind us that design isn’t just about communication
+          — it’s about expression, impact, and cultural voice.
+        </p>
+        <blockquote>
+          “Words have meaning and type has spirit.”
+          <span>— Paula Scher</span>
+        </blockquote>
+        <a href="/index.html#study" class="btn-primary">← Back to Study</a>
+      </section>
+    </main>
+
+    <footer class="site-footer scher-footer">
+      <p>© 2025 Web of Designers · Designed Loudly.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script>
+      gsap.utils.toArray(".fade-in").forEach((el) => {
+        gsap.from(el, {
+          opacity: 0,
+          y: 60,
+          duration: 1,
+          scrollTrigger: {
+            trigger: el,
+            start: "top 85%",
+          },
+        });
+      });
+
+      gsap.from(".big-type span", {
+        x: 80,
+        opacity: 0,
+        duration: 1,
+        ease: "power4.out",
+      });
+    </script>
+  </body>
+</html>

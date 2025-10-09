@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wes Anderson — Web of Designers</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="wes-page">
+    <header class="main-header">
+      <a href="index.html" class="logo">WD</a>
+      <nav>
+        <ul>
+          <li><a href="/index.html#about">About</a></li>
+          <li><a href="/index.html#study">Study</a></li>
+          <li><a href="/index.html#work">Timeline</a></li>
+          <li><a href="/index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="wes-main">
+      <section class="wes-hero">
+        <div class="hero-frame">
+          <img
+            src="../images/wes.jpg"
+            alt="Wes Anderson portrait"
+            class="wes-portrait"
+          />
+        </div>
+        <h1 class="wes-title">Wes Anderson</h1>
+        <p class="wes-subtitle">
+          Filmmaker · Visual Storyteller · Master of Symmetry
+        </p>
+      </section>
+
+      <section class="wes-bio content-wrapper">
+        <h2>The Art of Symmetry</h2>
+        <p>
+          Wes Anderson is not just a filmmaker — he’s a designer of worlds.
+          Every frame he creates is composed like a painting, defined by
+          symmetry, color harmony, and an obsessive attention to visual detail.
+          His films blend nostalgia with precision, transforming ordinary spaces
+          into storybook-like environments that feel both familiar and surreal.
+        </p>
+        <p>
+          Trained as a writer, Anderson’s visual storytelling developed
+          organically through collaboration with designers, set decorators, and
+          typographers. The result? A cinematic style instantly recognizable —
+          pastel hotels, centered compositions, vintage Futura type, and
+          characters framed as if part of a living diorama. His movies remind us
+          that design and emotion are deeply connected.
+        </p>
+      </section>
+
+      <section class="wes-gallery">
+        <h2>Iconic Visual Worlds</h2>
+        <div class="gallery-row">
+          <figure>
+            <img
+              src="../images/budapestHotel.jpg"
+              alt="The Grand Budapest Hotel"
+            />
+            <figcaption>The Grand Budapest Hotel (2014)</figcaption>
+          </figure>
+          <figure>
+            <img src="../images/moonrise.jpg" alt="Moonrise Kingdom" />
+            <figcaption>Moonrise Kingdom (2012)</figcaption>
+          </figure>
+          <figure>
+            <img src="../images/royal.jpg" alt="The Royal Tenenbaums" />
+            <figcaption>The Royal Tenenbaums (2001)</figcaption>
+          </figure>
+        </div>
+        <p class="gallery-descriptionWes">
+          Anderson’s visual language evolved across decades — from the saturated
+          browns and reds of
+          <em>Rushmore</em> to the candy-colored dreamscapes of
+          <em>The Grand Budapest Hotel</em>. His collaborations with production
+          designer Adam Stockhausen and graphic designer Annie Atkins brought to
+          life a cohesive universe where every matchbox, newspaper, and poster
+          is art-directed with care. In Anderson’s worlds, even the smallest
+          prop tells a story.
+        </p>
+      </section>
+
+      <section class="wes-legacy">
+        <h2>A Cinematic Designer</h2>
+        <p>
+          Beyond film, Wes Anderson’s influence extends into graphic design,
+          branding, and architecture. His ability to merge storytelling with
+          structure has inspired countless creatives — from interior designers
+          replicating his color palettes to web designers echoing his symmetry
+          in interface layouts. Anderson’s style challenges the chaos of modern
+          visuals with an almost obsessive order, showing that beauty often lies
+          in balance.
+        </p>
+        <br />
+        <p>
+          His universe isn’t just cinematic; it’s a study in controlled whimsy —
+          one that makes us appreciate design not as decoration, but as a
+          narrative tool. Each movie becomes a visual manifesto, proving that
+          the designer’s eye can exist anywhere — even behind a camera.
+        </p>
+        <blockquote>
+          “The details, that’s what the world is made of. They’re what keeps it
+          interesting.”
+          <span>— Wes Anderson</span>
+        </blockquote>
+        <a href="/index.html#study" class="btn-primaryWes">← Back to Study</a>
+      </section>
+    </main>
+
+    <footer class="site-footerWes">
+      <div class="footer-content">
+        <div class="footer-left">
+          <a href="index.html#home" class="footer-logo">WD</a>
+          <p class="footer-tagline">
+            Connecting design legacies with modern creativity.
+          </p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html#about">About</a>
+          <a href="index.html#study">Study</a>
+          <a href="index.html#work">Timeline</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+        <div class="footer-right">
+          <p>© 2025 Web of Designers. All rights reserved.</p>
+          <p>Crafted by Megan Palmquist.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script>
+      gsap.from(".wes-title", { y: 50, opacity: 0, duration: 1 });
+      gsap.from(".wes-subtitle", {
+        y: 30,
+        opacity: 0,
+        delay: 0.3,
+        duration: 1,
+      });
+      gsap.from(".gallery-row figure", {
+        scrollTrigger: ".wes-gallery",
+        y: 50,
+        opacity: 0,
+        stagger: 0.3,
+      });
+    </script>
+  </body>
+</html>
