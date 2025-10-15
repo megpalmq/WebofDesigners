@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Massimo & Lella Vignelli — Web of Designers</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;900&family=Anton&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="vignelli-theme">
+    <header class="vignelli-header">
+      <a href="index.html" class="logo">WD</a>
+      <nav>
+        <ul>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#study">Study</a></li>
+          <li><a href="index.html#work">Timeline</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="vignelli-hero">
+        <div class="vignelli-hero-inner">
+          <div class="vignelli-hero-text">
+            <h1 class="vignelli-type">MASSIMO & LELLA <span>VIGNELLI</span></h1>
+            <p class="subtitle-vig">
+              Modernists | Architects | System Thinkers
+            </p>
+          </div>
+
+          <div class="vignelli-image-container">
+            <img
+              src="../images/vignelli-portrait.jpg"
+              alt="Portrait of Massimo and Lella Vignelli"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="designer-bio-vig fade-in">
+        <h2>Design Is One</h2>
+        <p>
+          Massimo and Lella Vignelli defined an era of modernism built on
+          discipline, clarity, and timelessness. Their work — from the New York
+          City Subway Map to the American Airlines identity — was guided by a
+          singular philosophy: that design should bring order to complexity.
+        </p>
+        <p>
+          They believed in the power of the grid, in Helvetica as a tool of
+          clarity, and in the idea that
+          <strong>good design lasts forever</strong>. Their motto, “Design is
+          One,” reminds us that whether you design a chair, a book, or a city
+          system — the process is the same.
+        </p>
+      </section>
+
+      <!-- PRINCIPLES -->
+      <section class="vignelli-principle-section fade-in">
+        <h3>The Vignelli Canon</h3>
+        <div class="vignelli-canon-list">
+          <div class="canon-item">
+            <h4>Discipline</h4>
+            <p>
+              Remove what isn't essential. A designer's freedom is found through
+              structure.
+            </p>
+          </div>
+          <div class="canon-item">
+            <h4>Appropriateness</h4>
+            <p>
+              Design must serve its content. Form follows the logic of meaning.
+            </p>
+          </div>
+          <div class="canon-item">
+            <h4>Timelessness</h4>
+            <p>
+              Reject trends. Create work that belongs to all times, not just
+              one.
+            </p>
+          </div>
+          <div class="canon-item">
+            <h4>The Grid</h4>
+            <p>
+              Order and clarity begin with alignment. The grid is invisible but
+              ever-present.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- GALLERY -->
+      <section class="vignelli-gallery fade-in">
+        <h2 style="font-size: 40px">Selected Works</h2>
+        <div class="vignelli-gallery-grid">
+          <figure>
+            <img src="../images/vignelli-map.webp" alt="NYC Subway Map" />
+            <figcaption>NYC Subway Map (1972)</figcaption>
+          </figure>
+          <figure>
+            <img src="../images/knoll.jpg" alt="Knoll Identity" />
+            <figcaption>Knoll Corporate Identity</figcaption>
+          </figure>
+          <figure>
+            <img src="../images/vignelli-aa.jpg" alt="American Airlines" />
+            <figcaption>American Airlines Identity (1967)</figcaption>
+          </figure>
+          <figure>
+            <img src="../images/vignelli-canon.jpg" alt="Design Handbook" />
+            <figcaption>The Vignelli Design Canon</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- LEGACY -->
+      <section class="designer-legacy-vig fade-in">
+        <h2>Legacy</h2>
+        <p>
+          The Vignellis’ influence is still seen today in every clean
+          typographic layout and systematic design system. They reminded us that
+          design is not decoration — it’s communication. Their impact continues
+          to shape corporate identity, editorial design, and urban information
+          systems across the world.
+        </p>
+
+        <blockquote class="blockquote-vig">
+          “If you can design one thing, you can design everything.”
+          <span>— Massimo Vignelli</span>
+        </blockquote>
+
+        <a href="/index.html#study" class="btn-primary">← Back to Study</a>
+      </section>
+    </main>
+
+    <footer class="vignelli-footer">
+      <p>© 2025 Web of Designers · Designed Systematically</p>
+    </footer>
+
+    <!-- GSAP Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script>
+      gsap.utils.toArray(".fade-in").forEach((el) => {
+        gsap.from(el, {
+          opacity: 0,
+          y: 60,
+          duration: 1.2,
+          scrollTrigger: {
+            trigger: el,
+            start: "top 85%",
+          },
+        });
+      });
+
+      gsap.from(".vignelli-type", {
+        x: -80,
+        opacity: 0,
+        duration: 1.2,
+        ease: "power3.out",
+      });
+    </script>
+  </body>
+</html>

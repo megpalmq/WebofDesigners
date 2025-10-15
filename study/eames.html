@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Charles & Ray Eames — Web of Designers</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700;900&family=Anton&display=swap"
+      rel="stylesheet"
+    />
+    </head>
+
+  <body class="eames-theme">
+    <header class="main-header eames-header">
+      <a href="index.html" class="logo">WD</a>
+      <nav>
+        <ul>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#study">Study</a></li>
+          <li><a href="../index.html#work">Timeline</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="designer-page">
+      <section class="designer-hero eames-hero">
+        <div class="eames-hero-text">
+          <h1 class="eames-type">CHARLES & RAY <span>EAMES</span></h1>
+          <p class="subtitle">Designers · Architects · Filmmakers · Explorers</p>
+        </div>
+        <div class="eames-image-container">
+          <img src="../images/charles_and_ray_eames.webp" alt="Portrait of Charles and Ray Eames" />
+        </div>
+      </section>
+
+      <section class="designer-bio content-wrapper fade-in">
+        <h2>About Charles & Ray Eames</h2>
+        <p>
+          Charles and Ray Eames were a revolutionary design team whose work spanned architecture, industrial design, furniture, graphic design, and film. They believed in the idea that design was **a way of life**, constantly solving problems to make the best for the most for the least. Their meticulous process and playful curiosity led to some of the 20th century's most enduring and democratic designs.
+        </p>
+      </section>
+      
+      <section class="eames-principle-section fade-in">
+        <h3 class="eamesh3">Core Design Principles</h3>
+        <div class="principle-grid-eames">
+          <div class="principle-card-eames">
+            <h4>Function & Form</h4>
+            <p>A commitment to solving problems first. Their work is an elegant synthesis of utility and beautiful shape.</p>
+          </div>
+          <div class="principle-card-eames"">
+            <h4>Molded Plywood</h4>
+            <p>Pioneering techniques to bend plywood in complex curves, creating lightweight, strong, and affordable furniture.</p>
+          </div>
+          <div class="principle-card-eames">
+            <h4>"Tension of Two"</h4>
+            <p>Their partnership was a dynamic balance. Charles was the structure, and Ray was the texture, color, and art.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="eames-gallery fade-in">
+        <h2>Iconic Works</h2>
+        <div class="gallery-grid -eames eames-gallery-grid">
+          <figure>
+            <img
+              src="../images/eameschair.webp"
+              alt="Eames Lounge Chair and Ottoman"
+            />
+            <figcaption>Eames Lounge Chair (1956)</figcaption>
+          </figure>
+          <figure>
+            <img src="../images/eamesstudy.jpg" alt="Eames House Exterior" />
+            <figcaption>Case Study House No. 8 (1949)</figcaption>
+          </figure>
+          <figure>
+            <img src="../images/plywoodChair.jpg" alt="Eames Molded Plywood Chair" />
+            <figcaption>LCW 'Plywood Group' Chair (1945)</figcaption>
+          </figure>
+          <figure>
+            <img src="../images/eamesFilm.jpg" alt="Still from Powers of Ten" />
+            <figcaption>Film: Powers of Ten (1977)</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="designer-legacy content-wrapper fade-in">
+        <h2>Legacy</h2>
+        <p>
+          The Eameses' impact extends far beyond furniture; they set the standard for mid-century modern design and taught the world that **play and precision** can co-exist. Their belief in continuous exploration and iterative problem-solving remains a cornerstone of modern design thinking.
+        </p>
+        <blockquote class="blockquote-eames">
+          “The details are not the details. They make the product.”
+          <span>— Charles Eames</span>
+        </blockquote>
+        <a href="/index.html#study" class="btn-primary">← Back to Study</a>
+      </section>
+    </main>
+
+    <footer class="site-footer eames-footer">
+      <p>© 2025 Web of Designers · Designed Playfully and Precisely.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script>
+      // Scroll-based fading animation (remains the same)
+      gsap.utils.toArray(".fade-in").forEach((el) => {
+        gsap.from(el, {
+          opacity: 0,
+          y: 60,
+          duration: 1,
+          scrollTrigger: {
+            trigger: el,
+            start: "top 85%",
+          },
+        });
+      });
+
+      // Simple, structured text reveal for Eames aesthetic (less flashy than Scher)
+      gsap.from(".eames-type span", {
+        y: 40,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        delay: 0.3,
+      });
+    </script>
+  </body>
+</html>

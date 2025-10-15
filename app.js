@@ -172,7 +172,7 @@ const designerData = {
     quote:
       "I always say, if you can design one thing, you can design anything.",
     bio: "Managed the operations of Vignelli Associates and, alongside her husband Massimo, created cohesive, timeless design systems using minimal typefaces like Helvetica.",
-    image: "url('/images/Vignelli.jpg')",
+    image: "url('/images/vignelli-space.png')",
   },
   anderson: {
     name: "Wes Anderson",
