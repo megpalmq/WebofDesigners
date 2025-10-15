@@ -20,91 +20,54 @@ function setupHorizontalScroll() {
 
   if (!horizontalContainer || projects.length === 0) return;
 
-  ScrollTrigger.addEventListener("refreshInit", () => {
-    let totalWidth = 0;
+  // Create a media query using GSAP's built-in matchMedia
+  let mm = gsap.matchMedia();
 
-    const gap = window.innerWidth * 0.05;
+  mm.add("(min-width: 769px)", () => {
+    // --- Enable horizontal scroll for desktop only ---
+    ScrollTrigger.addEventListener("refreshInit", () => {
+      let totalWidth = 0;
+      const gap = window.innerWidth * 0.05;
 
-    projects.forEach((project) => {
-      totalWidth += project.offsetWidth + gap;
+      projects.forEach((project) => {
+        totalWidth += project.offsetWidth + gap;
+      });
+
+      horizontalContainer.style.width = totalWidth + "px";
     });
 
-    horizontalContainer.style.width = totalWidth + "px";
-  });
+    let scrollDistance = () =>
+      horizontalContainer.scrollWidth - window.innerWidth;
 
-  let scrollDistance = () =>
-    horizontalContainer.scrollWidth - window.innerWidth;
-
-  gsap.to(horizontalContainer, {
-    x: () => -scrollDistance(),
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".work-section",
-      start: "top top",
-
-      end: () => `+=${scrollDistance()}`,
-      pin: true,
-      scrub: 1,
-      invalidateOnRefresh: true,
-    },
-  });
-}
-
-const modal = document.getElementById("designer-detail-modal");
-
-function openDesignerModal(data) {
-  if (!modal) return;
-
-  document.getElementById("detail-name").textContent = data.name;
-  document.getElementById("detail-significance").textContent =
-    data.significance;
-  document.getElementById("detail-bio").textContent = data.bio;
-  document.getElementById("detail-quote").textContent = `"${data.quote}"`;
-
-  const designsList = document.getElementById("detail-designs");
-  if (designsList) {
-    designsList.innerHTML = "";
-    data.designs.forEach((design) => {
-      const li = document.createElement("li");
-      li.textContent = design;
-      designsList.appendChild(li);
+    // Horizontal scroll animation
+    gsap.to(horizontalContainer, {
+      x: () => -scrollDistance(),
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".work-section",
+        start: "top top",
+        end: () => `+=${scrollDistance()}`,
+        pin: true,
+        scrub: 1,
+        invalidateOnRefresh: true,
+      },
     });
-  }
-
-  modal.style.display = "flex";
-  document.body.style.overflow = "hidden";
-
-  gsap.fromTo(
-    modal.querySelector(".modal-content"),
-    { opacity: 0, y: 50, scale: 0.95 },
-    {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      duration: 0.5,
-      ease: "power3.out",
-    }
-  );
-}
-
-function closeDesignerModal() {
-  if (!modal) return;
-
-  gsap.to(modal.querySelector(".modal-content"), {
-    opacity: 0,
-    y: 20,
-    scale: 0.95,
-    duration: 0.3,
-    ease: "power3.in",
-    onComplete: () => {
-      modal.style.display = "none";
-      document.body.style.overflow = "";
-    },
   });
-  document
-    .querySelectorAll(".designer-card")
-    .forEach((c) => c.classList.remove("active-card"));
+
+  mm.add("(max-width: 768px)", () => {
+    // --- Disable horizontal scroll on tablet and mobile ---
+    gsap.set(horizontalContainer, { x: 0 }); // reset position
+    ScrollTrigger.getAll().forEach((trigger) => {
+      if (
+        trigger.trigger &&
+        trigger.trigger.classList.contains("work-section")
+      ) {
+        trigger.kill();
+      }
+    });
+  });
 }
+
 const designerData = {
   glaser: {
     name: "Milton Glaser",
@@ -400,7 +363,6 @@ masterEntrance
   );
 
 function setupScrollAnimations() {
-  // 1. Initial fade-in for intro paragraph
   gsap.from(".intro-section p", {
     y: 30,
     opacity: 0,
@@ -409,7 +371,6 @@ function setupScrollAnimations() {
     ease: "power2.out",
   });
 
-  // Create a dedicated timeline for the text exit animation (duration doesn't matter much)
   const introAnim = gsap.timeline({ paused: true });
 
   // Define the exit animation steps in the timeline
@@ -478,19 +439,6 @@ function setupScrollAnimations() {
   });
 }
 
-const closeButton = modal ? modal.querySelector(".close-btn") : null;
-if (closeButton) {
-  closeButton.addEventListener("click", closeDesignerModal);
-}
-
-// Close the modal when the user clicks anywhere outside of the modal
-window.addEventListener("click", (event) => {
-  if (event.target === modal) {
-    closeDesignerModal();
-  }
-});
-
-// Close the modal on the escape key
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape" && modal && modal.style.display === "flex") {
     closeDesignerModal();

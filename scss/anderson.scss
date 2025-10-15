@@ -1,0 +1,354 @@
+/* =========================================
+   WES ANDERSON — SYMMETRY & STORYTELLING
+   ========================================= */
+
+body.wes-page {
+  background-color: #f9f4ef; /* warm cream */
+  color: #2b2b2b;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.7;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* HEADER */
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f9f4ef;
+  border-bottom: 3px solid #c57b57;
+  padding: 25px 5vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+
+  .logo {
+    text-decoration: none;
+    color: #2b2b2b;
+    font-weight: 700;
+    font-size: 1.6em;
+    letter-spacing: 0.03em;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+
+    a {
+      text-decoration: none;
+      color: #2b2b2b;
+      font-weight: 500;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #c57b57;
+      }
+    }
+  }
+}
+
+/* HERO */
+.wes-hero {
+  min-height: 100vh;
+  background-color: #e8d9ce;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 120px;
+  position: relative;
+  overflow: hidden;
+
+  /* pastel geometric border */
+  &::before {
+    content: "";
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    right: 40px;
+    bottom: 40px;
+    border: 6px solid #c57b57;
+    border-radius: 10px;
+  }
+
+  .hero-frame {
+    width: 240px;
+    height: 240px;
+    border: 5px solid #2b2b2b;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 40px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+
+    .wes-portrait {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: sepia(10%) contrast(95%);
+      transition: transform 0.6s ease;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  .wes-title {
+    font-family: "Playfair Display", serif;
+    font-size: 3.5em;
+    color: #2b2b2b;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .wes-subtitle {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.2em;
+    color: #c57b57;
+    letter-spacing: 0.05em;
+  }
+}
+
+/* BIO SECTION */
+.wes-bio {
+  max-width: 900px;
+  margin: 120px auto;
+  padding: 0 6vw;
+  text-align: center;
+
+  h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 2.4em;
+    color: #c57b57;
+    margin-bottom: 25px;
+  }
+
+  p {
+    font-size: 1.1em;
+    color: #2b2b2b;
+    margin-bottom: 20px;
+    line-height: 1.8;
+  }
+
+  em {
+    font-style: italic;
+    color: #b04e3a;
+  }
+}
+
+/* GALLERY */
+.wes-gallery {
+  background-color: #f3e8de;
+  padding: 100px 6vw;
+  text-align: center;
+  border-top: 4px double #c57b57;
+  border-bottom: 4px double #c57b57;
+
+  h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 2.4em;
+    color: #2b2b2b;
+    margin-bottom: 60px;
+  }
+
+  .gallery-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+
+    figure {
+      background-color: #fff;
+      border: 3px solid #2b2b2b;
+      width: 300px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+      &:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        display: block;
+      }
+
+      figcaption {
+        background-color: #f9f4ef;
+        padding: 15px;
+        font-family: "Poppins", sans-serif;
+        font-size: 0.95em;
+        color: #2b2b2b;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .gallery-descriptionWes {
+    max-width: 800px;
+    margin: 60px auto 0;
+    font-size: 1.1em;
+    color: #2b2b2b;
+    line-height: 1.7;
+  }
+}
+
+/* LEGACY SECTION */
+.wes-legacy {
+  background-color: #fff;
+  padding: 100px 6vw;
+  text-align: center;
+
+  h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 2.4em;
+    color: #b04e3a;
+    margin-bottom: 25px;
+  }
+
+  p {
+    max-width: 850px;
+    margin: 0 auto 30px;
+    font-size: 1.1em;
+    color: #2b2b2b;
+  }
+
+  blockquote {
+    font-family: "Playfair Display", serif;
+    font-size: 1.6em;
+    font-style: italic;
+    color: #2b2b2b;
+    margin: 60px auto 30px;
+    max-width: 700px;
+    position: relative;
+    line-height: 1.5;
+
+    &::before {
+      content: "“";
+      position: absolute;
+      left: -25px;
+      top: -15px;
+      font-size: 3em;
+      color: #c57b57;
+      opacity: 0.4;
+    }
+
+    span {
+      display: block;
+      margin-top: 15px;
+      font-size: 0.9em;
+      font-family: "Poppins", sans-serif;
+      color: #c57b57;
+    }
+  }
+
+  .btn-primaryWes {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 25px;
+    border: 2px solid #c57b57;
+    color: #c57b57;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: #c57b57;
+      color: #fff;
+    }
+  }
+}
+
+/* FOOTER */
+.site-footerWes {
+  background-color: #f3e8de;
+  color: #2b2b2b;
+  text-align: center;
+  padding: 50px 0;
+  font-size: 0.95em;
+  border-top: 3px solid #c57b57;
+
+  a {
+    color: #b04e3a;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 1024px) {
+  .wes-hero::before {
+    top: 25px;
+    left: 25px;
+    right: 25px;
+    bottom: 25px;
+  }
+
+  .gallery-row {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .wes-title {
+    font-size: 3em;
+  }
+
+  .gallery-row figure {
+    width: 260px;
+
+    img {
+      height: 220px;
+    }
+  }
+
+  .wes-bio,
+  .wes-gallery,
+  .wes-legacy {
+    padding: 80px 5vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-header {
+    padding: 15px 5vw;
+  }
+
+  .wes-title {
+    font-size: 2.4em;
+  }
+
+  .gallery-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .gallery-row figure {
+    width: 90%;
+  }
+
+  blockquote {
+    font-size: 1.3em;
+  }
+
+  .btn-primaryWes {
+    padding: 10px 20px;
+    font-size: 0.9em;
+  }
+}

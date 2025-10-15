@@ -1,0 +1,25 @@
+{
+  "name": "webofdesigners",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "serve": "live-server",
+    "compile-sass": "sass scss/styles.scss css/styles.css -w --no-source-map"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/megpalmq/WebofDesigners.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/megpalmq/WebofDesigners/issues"
+  },
+  "homepage": "https://github.com/megpalmq/WebofDesigners#readme",
+  "devDependencies": {
+    "sass": "^1.93.2"
+  }
+}

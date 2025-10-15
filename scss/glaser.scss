@@ -1,0 +1,356 @@
+body.glaser-page {
+  background: radial-gradient(circle at top left, #ffecd2, #fcb69f);
+  color: #111;
+  font-family: "Inter", sans-serif;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* HEADER */
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 25px 6vw;
+  background: linear-gradient(90deg, #ff5858, #f09819);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+
+  .logo {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.6em;
+    letter-spacing: 0.05em;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+
+    a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 400;
+      transition: opacity 0.3s ease;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+/* HERO */
+.glaser-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 140px 6vw 100px;
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+
+  .hero-image-container {
+    flex: 1;
+    text-align: center;
+
+    .hero-image {
+      width: 100%;
+      max-width: 420px;
+      border: 10px solid #fff;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+      transform: rotate(-4deg);
+      transition: transform 0.6s ease, box-shadow 0.4s ease;
+
+      &:hover {
+        transform: rotate(0deg) scale(1.05);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+      }
+    }
+  }
+
+  .hero-textMil {
+    flex: 1;
+    padding: 20px 40px;
+    text-align: left;
+    position: relative;
+
+    h1 {
+      font-family: "Permanent Marker", cursive;
+      font-size: 5em;
+      color: #ff5858;
+      text-shadow: 2px 2px #00000010;
+      margin-bottom: 10px;
+      position: relative;
+
+      /* glowing underline like hand-drawn paint stroke */
+      &::after {
+        content: "";
+        display: block;
+        width: 70%;
+        height: 10px;
+        background: linear-gradient(90deg, #ff5858, #f09819);
+        border-radius: 10px;
+        margin-top: 5px;
+      }
+    }
+
+    .subtitleMil {
+      font-size: 1.3em;
+      color: #333;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+
+    .tagline {
+      margin-top: 20px;
+      font-size: 1.2em;
+      font-weight: 400;
+      font-style: italic;
+      color: #444;
+      max-width: 500px;
+      line-height: 1.5;
+    }
+  }
+}
+
+/* BIO */
+.glaser-bio {
+  background: #fff;
+  color: #111;
+  max-width: 950px;
+  margin: 100px auto;
+  padding: 80px 6vw;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+
+  h2 {
+    font-family: "Permanent Marker", cursive;
+    font-size: 2.6em;
+    color: #ff5858;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 20px;
+
+    em {
+      color: #f09819;
+      font-weight: 600;
+      font-style: normal;
+    }
+  }
+}
+
+/* GALLERY */
+.glaser-gallery {
+  background: linear-gradient(90deg, #fff0e5 0%, #ffe6cc 100%);
+  padding: 120px 6vw;
+  text-align: center;
+
+  h2 {
+    font-family: "Permanent Marker", cursive;
+    font-size: 2.6em;
+    color: #ff5858;
+    margin-bottom: 50px;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+
+    figure {
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      transform: rotate(-1deg);
+      transition: all 0.4s ease;
+
+      &:hover {
+        transform: rotate(1deg) scale(1.03);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      img {
+        width: 100%;
+        display: block;
+        object-fit: cover;
+      }
+
+      figcaption {
+        padding: 15px;
+        font-size: 1em;
+        color: #fff;
+        background: linear-gradient(90deg, #ff5858, #f09819);
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+/* LEGACY */
+.glaser-legacy {
+  padding: 120px 6vw;
+  text-align: center;
+  background: #fff;
+
+  h2 {
+    font-family: "Permanent Marker", cursive;
+    font-size: 2.6em;
+    color: #ff5858;
+    margin-bottom: 25px;
+  }
+
+  p {
+    max-width: 800px;
+    margin: 0 auto 50px;
+    font-size: 1.1em;
+    color: #222;
+  }
+
+  blockquote {
+    font-family: "Permanent Marker", cursive;
+    font-size: 1.8em;
+    color: #000;
+    margin: 40px auto;
+    max-width: 700px;
+    line-height: 1.4;
+    position: relative;
+
+    &::before {
+      content: "“";
+      position: absolute;
+      left: -25px;
+      top: -15px;
+      font-size: 2.5em;
+      color: #ff5858;
+      opacity: 0.7;
+    }
+
+    span {
+      display: block;
+      margin-top: 15px;
+      font-size: 0.9em;
+      color: #666;
+    }
+  }
+
+  .btn-primaryMil {
+    display: inline-block;
+    padding: 14px 30px;
+    margin-top: 20px;
+    background: linear-gradient(90deg, #ff5858, #f09819);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 20px rgba(255, 88, 88, 0.3);
+    }
+  }
+}
+
+/* FOOTER */
+.site-footer {
+  background: #111;
+  color: #fff;
+  padding: 60px 6vw;
+  text-align: center;
+  font-size: 0.95em;
+  border-top: 5px solid #ff5858;
+
+  a {
+    color: #f09819;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #ff5858;
+    }
+  }
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 1024px) {
+  .glaser-hero {
+    flex-direction: column;
+    text-align: center;
+
+    .hero-image-container {
+      order: 1;
+    }
+
+    .hero-textMil {
+      order: 2;
+      padding: 0;
+    }
+
+    .hero-textMil h1 {
+      font-size: 4em;
+    }
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .glaser-hero {
+    padding-top: 120px;
+    gap: 30px;
+
+    .hero-textMil h1 {
+      font-size: 3em;
+    }
+
+    .subtitleMil {
+      font-size: 1.1em;
+    }
+  }
+
+  .glaser-gallery,
+  .glaser-bio,
+  .glaser-legacy {
+    padding: 80px 5vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-header {
+    padding: 15px 5vw;
+  }
+
+  .hero-textMil h1 {
+    font-size: 2.6em;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  blockquote {
+    font-size: 1.3em;
+  }
+
+  .btn-primaryMil {
+    padding: 10px 20px;
+    font-size: 0.9em;
+  }
+}
