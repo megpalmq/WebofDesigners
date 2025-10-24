@@ -62,40 +62,6 @@ body {
     pointer-events: none;
     opacity: 1;
   }
-
-  .main-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px 5vw;
-    font-weight: 300;
-  }
-
-  .logo {
-    color: var(--secondary-color);
-    text-decoration: none;
-    font-size: 1.5em;
-    font-weight: 700;
-  }
-
-  nav ul {
-    list-style: none;
-    display: flex;
-  }
-
-  nav a {
-    color: var(--secondary-color);
-    text-decoration: none;
-    margin-left: 30px;
-    font-size: 1em;
-    font-weight: 300;
-    transition: color 0.3s;
-  }
 }
 .wrapper::after {
   content: "";
@@ -607,7 +573,6 @@ body {
     border-radius: 10px;
     text-align: left;
     box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
-    cursor: pointer;
   }
   .project-card1 {
     background-image: url(../images/eamrsEra.jpg);
@@ -968,11 +933,6 @@ body {
 @media (max-width: 1024px) {
   .main-header {
     padding: 20px 4vw;
-  }
-
-  nav a {
-    margin-left: 20px;
-    font-size: 0.95em;
   }
 
   .project-card {
