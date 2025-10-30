@@ -1,5 +1,18 @@
 gsap.registerPlugin(ScrollTrigger);
-gsap.defaults({ duration: 1, ease: "power2.out" }); // Set a default duration and ease
+gsap.defaults({ duration: 2, ease: "power2.out" });
+
+const dropdown = document.querySelector(".dropdown");
+const menu = dropdown.querySelector(".dropdown-menu");
+
+gsap.set(menu, { autoAlpha: 0, y: 10 });
+
+dropdown.addEventListener("mouseenter", () => {
+  gsap.to(menu, { autoAlpha: 1, y: 0, duration: 0.4, ease: "power2.out" });
+});
+
+dropdown.addEventListener("mouseleave", () => {
+  gsap.to(menu, { autoAlpha: 0, y: 10, duration: 0.3, ease: "power2.inOut" });
+});
 
 function splitText(selector) {
   const element = document.querySelector(selector);
@@ -48,7 +61,7 @@ function setupHorizontalScroll() {
         start: "top top",
         end: () => `+=${scrollDistance()}`,
         pin: true,
-        scrub: 1,
+        scrub: 2.5,
         invalidateOnRefresh: true,
       },
     });
@@ -206,26 +219,53 @@ function setupDesignStudyCarousel() {
     const maxDelta = window.innerWidth / 2;
 
     allCards.forEach((card) => {
-      if (card.classList.contains("hovered")) return;
+      let hoverTween;
 
-      const rect = card.getBoundingClientRect();
-      const cardCenter = rect.left + rect.width / 2;
-      const delta = cardCenter - viewportCenter;
-      const rotationY = -delta / ROTATION_DIVISOR;
+      card.addEventListener("mouseenter", () => {
+        card.classList.add("hovered");
 
-      const clampedRotation = gsap.utils.clamp(
-        -MAX_ROTATION,
-        MAX_ROTATION,
-        rotationY
-      );
-      const scaleFactor = 1 - (Math.abs(delta) / maxDelta) * 0.2;
-      const scale = gsap.utils.clamp(0.85, 1, scaleFactor);
-      const zDepth = Math.abs(clampedRotation) * -1.5;
+        // Gently slow down the carousel instead of snapping
+        gsap.to(carouselTimeline, {
+          timeScale: 0.4,
+          duration: 0.8,
+          ease: "power2.out",
+        });
 
-      gsap.set(card, {
-        rotationY: clampedRotation,
-        scale: scale,
-        z: zDepth,
+        // Cancel any previous hover animation
+        if (hoverTween) hoverTween.kill();
+
+        hoverTween = gsap.to(card, {
+          scale: 1.08,
+          rotationY: 0,
+          z: 60,
+          duration: 0.6,
+          ease: "power3.out",
+          overwrite: "auto",
+        });
+      });
+
+      card.addEventListener("mouseleave", () => {
+        gsap.to(carouselTimeline, {
+          timeScale: 1,
+          duration: 1.2,
+          ease: "power3.inOut",
+        });
+
+        if (hoverTween) hoverTween.kill();
+
+        gsap.to(card, {
+          scale: 1,
+          z: 0,
+          rotationY: 0,
+          duration: 0.6,
+          ease: "power2.inOut",
+          overwrite: "auto",
+          onComplete: () => {
+            gsap.set(card, { clearProps: "scale,z,rotationY" });
+            card.classList.remove("hovered");
+            applyPerspectiveTransforms();
+          },
+        });
       });
     });
   };

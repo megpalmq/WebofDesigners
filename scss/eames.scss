@@ -183,53 +183,87 @@ body.eames-theme {
   }
 }
 
+/* EAMES GALLERY */
 .eames-gallery {
+  background: linear-gradient(90deg, #fff8f0 0%, #fbe2c3 100%);
   padding: 120px 6vw;
-  background-color: #ffffff;
   text-align: center;
 
   h2 {
-    font-family: "Anton", sans-serif;
-    font-size: 2.5em;
-    color: #e34f26;
+    font-family: "Permanent Marker", cursive;
+    font-size: 2.6em;
+    color: #d45a1c;
     margin-bottom: 50px;
   }
 
-  .eames-gallery-grid {
+  .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(360px, 2fr));
     gap: 40px;
     max-width: 1100px;
     margin: 0 auto;
 
     figure {
-      background-color: #f9f8f5;
-      border-radius: 8px;
+      position: relative;
+      border-radius: 15px;
       overflow: hidden;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
 
-      &:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-      }
-
-      /* Ensures consistent image sizing */
       img {
         width: 100%;
-        height: 280px; /* consistent height for all */
-        object-fit: cover;
         display: block;
+        object-fit: cover;
+        transition: transform 0.5s ease, filter 0.5s ease;
       }
 
       figcaption {
-        font-size: 0.95em;
-        color: #111;
-        font-weight: 400;
         padding: 15px;
-        background-color: #fff;
-        border-top: 2px solid #e34f26;
+        font-size: 1em;
+        color: #fff;
+        background: linear-gradient(90deg, #d45a1c, #f09819);
+        font-weight: 600;
       }
+
+      .overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.8);
+        color: #fff7e6;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 25px;
+        font-size: 0.95em;
+        line-height: 1.6;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.4s ease, transform 0.4s ease;
+      }
+
+      &:hover {
+        transform: scale(1.03);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+
+        img {
+          transform: scale(1.08);
+          filter: blur(2px) brightness(0.7);
+        }
+
+        .overlay {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+
+  /* responsive adjustments */
+  @media (max-width: 768px) {
+    padding: 80px 5vw;
+
+    h2 {
+      font-size: 2.2em;
     }
   }
 }

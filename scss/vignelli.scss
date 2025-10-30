@@ -210,6 +210,36 @@ body.vignelli-theme {
       border-radius: 2px;
       overflow: hidden;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative; // ensures the overlay sits correctly
+      overflow: hidden; // keeps overlay contained
+
+      .overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.85);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 25px;
+        font-size: 0.95em;
+        line-height: 1.6;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.4s ease, transform 0.4s ease;
+      }
+
+      &:hover .overlay {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      &:hover img {
+        transform: scale(1.05);
+        filter: blur(2px) brightness(0.7);
+        transition: transform 0.4s ease, filter 0.4s ease;
+      }
 
       &:hover {
         transform: translateY(-5px);

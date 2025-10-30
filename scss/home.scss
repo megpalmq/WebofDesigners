@@ -862,7 +862,7 @@ body {
   }
 }
 
-.site-footer {
+.site-footer-home {
   background-color: #000;
   color: #fff;
   padding: 3rem 2rem;
@@ -901,22 +901,22 @@ body {
   color: #ccc;
 }
 
-.footer-links {
+.footer-links-home {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
   flex-wrap: wrap;
 }
 
-.footer-links a {
-  color: #fff;
+.footer-links-home a {
+  color: #1ad9ff;
   text-decoration: none;
   font-weight: 400;
   transition: color 0.3s ease;
 }
 
-.footer-links a:hover {
-  color: #999;
+.footer-links-home a:hover {
+  color: #ffffff;
 }
 
 .footer-right p {

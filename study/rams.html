@@ -12,14 +12,15 @@
   </head>
 
   <body class="rams-theme">
-    <header class="main-header minimal-header">
+    <header class="minimal-header">
       <a href="../index.html" class="logo">WD</a>
       <nav>
         <ul>
-          <li><a href="../index.html#about">About</a></li>
-          <li><a href="../index.html#study">Study</a></li>
-          <li><a href="../index.html#work">Timeline</a></li>
-          <li><a href="../index.html#contact">Contact</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#study">Study</a></li>
+          <li><a href="#work">Timeline</a></li>
+
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </header>
@@ -85,25 +86,48 @@
           <figure>
             <img src="../images/radio.jpg" alt="Braun SK4 Radio" />
             <figcaption>Braun SK4 Radio (1956)</figcaption>
+            <div class="overlay">
+              <p>
+                The SK4 “Snow White’s Coffin” combined transparent acrylic and
+                clean lines, embodying Rams’ principle of functional simplicity
+                in design.
+              </p>
+            </div>
           </figure>
+
           <figure>
             <img
               src="../images/braun-calculator.jpg"
               alt="Braun ET66 Calculator"
             />
             <figcaption>Braun ET66 Calculator (1987)</figcaption>
+            <div class="overlay">
+              <p>
+                A timeless icon of usability — the ET66’s intuitive layout
+                inspired Apple’s early iPhone calculator app, showcasing Rams’
+                enduring impact.
+              </p>
+            </div>
           </figure>
+
           <figure>
             <img
               src="../images/shelf.jpg"
               alt="Vitsoe 606 Universal Shelving System"
             />
             <figcaption>Vitsoe 606 Universal Shelving System (1960)</figcaption>
+            <div class="overlay">
+              <p>
+                The modular shelving system perfectly captures Rams’ idea of
+                “Less, but better,” blending versatility with elegant
+                minimalism.
+              </p>
+            </div>
           </figure>
         </div>
       </section>
 
-      <section class="designer-legacy fade-in">
+      <section class="designer-legacy-rams fade-in">
         <h2>Legacy</h2>
         <p>
           Rams’ disciplined design thinking paved the way for modern digital and
@@ -120,8 +144,27 @@
       </section>
     </main>
 
-    <footer class="site-footer minimal-footer">
-      <p>© 2025 Web of Designers · Crafted with clarity.</p>
+    <footer class="site-footer-home">
+      <div class="footer-content">
+        <div class="footer-left">
+          <a href="../index.html#home" class="footer-logo">WD</a>
+          <p class="footer-tagline">
+            Connecting design legacies with modern creativity.
+          </p>
+        </div>
+
+        <div class="footer-links-home">
+          <a href="../index.html#about">About</a>
+          <a href="../index.html#study">Study</a>
+          <a href="../index.html#work">Timeline</a>
+          <a href="../index.html#contact">Contact</a>
+        </div>
+
+        <div class="footer-right">
+          <p>© 2025 Web of Designers. All rights reserved.</p>
+          <p>Crafted by Megan Palmquist.</p>
+        </div>
+      </div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -146,5 +189,6 @@
         ease: "power2.out",
       });
     </script>
+    <script src="../app.js"></script>
   </body>
 </html>

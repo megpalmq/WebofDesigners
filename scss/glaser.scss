@@ -41,7 +41,7 @@ body.glaser-page {
       transition: opacity 0.3s ease;
 
       &:hover {
-        opacity: 0.7;
+        color: black;
       }
     }
   }
@@ -152,6 +152,7 @@ body.glaser-page {
 }
 
 /* GALLERY */
+/* GALLERY */
 .glaser-gallery {
   background: linear-gradient(90deg, #fff0e5 0%, #ffe6cc 100%);
   padding: 120px 6vw;
@@ -172,21 +173,17 @@ body.glaser-page {
     margin: 0 auto;
 
     figure {
+      position: relative;
       border-radius: 15px;
       overflow: hidden;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
       transform: rotate(-1deg);
       transition: all 0.4s ease;
-
-      &:hover {
-        transform: rotate(1deg) scale(1.03);
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-      }
 
       img {
         width: 100%;
         display: block;
         object-fit: cover;
+        transition: transform 0.5s ease, filter 0.5s ease;
       }
 
       figcaption {
@@ -195,6 +192,39 @@ body.glaser-page {
         color: #fff;
         background: linear-gradient(90deg, #ff5858, #f09819);
         font-weight: 600;
+      }
+
+      // Overlay styling
+      .overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.4s ease, transform 0.4s ease;
+        font-size: 0.95em;
+        line-height: 1.5;
+      }
+
+      &:hover {
+        transform: rotate(1deg) scale(1.03);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+
+        img {
+          transform: scale(1.1);
+          filter: blur(2px) brightness(0.7);
+        }
+
+        .overlay {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
     }
   }
