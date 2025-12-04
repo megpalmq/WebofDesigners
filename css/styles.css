@@ -68,7 +68,7 @@ body {
   z-index: 2;
 }
 .wrapper h1 {
-  font-weight: bold;
+  font-weight: bolder;
 }
 .wrapper .preloader {
   position: fixed;
